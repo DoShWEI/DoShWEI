@@ -1,0 +1,63 @@
+<!-- index.wxml-->
+<loading hidden="{{loading}}">
+  加载中....
+</loading>
+
+<scroll-view scroll-y class="films" hidden="{{!isleft}}" style='height: {{height}}px' bindscrolltolower="showingloadmore">
+  <view class="film-tab">
+    <view class="city" bindtap="tabChangeCity">{{city}}</view>
+    <view class="{{isleft?'active':''}}" bindtap="tabChangeHot">正在热映</view>
+    <text class="interval">|</text>
+    <view class="{{!isleft?'active':''}}" bindtap="tabChangeWaiting">即将上映</view>
+    <view class="find" bindtap="find">
+      <image src='../images/find.png'></image>
+    </view>
+  </view>
+  <view class="film">
+    <block wx:for="{{sfilms}}" data-id="{{item.id}}">
+      <navigator url="../film/film?id={{item.id}}">
+        <view class="showing-film">
+          <view class="film-cover">
+            <image class="film-img" src="{{item.images.large}}">
+              <view class="film-rating">{{item.rating.average
+                <=0? "暂无":item.rating.average}}</view>
+            </image>
+            <view class="film-intro">
+              <view class="film-title">{{item.title}}</view>
+            </view>
+            </view>
+          </view>
+      </navigator>
+    </block>
+    </view>
+    <view class='bottom' hidden="{{s_bottom}}">—————没有更多了—————</view>
+</scroll-view> -->
+
+<scroll-view scroll-y class="films" hidden="{{isleft}}" style='height: {{height}}px' bindscrolltolower="comingloadmore">
+  <view class="film-tab">
+    <view class="city" bindtap="tabChangeCity">{{city}}</view>
+    <view class="{{isleft?'active':''}}" bindtap="tabChangeHot">正在热映</view>
+    <text class="interval">|</text>
+    <view class="{{!isleft?'active':''}}" bindtap="tabChangeWaiting">即将上映</view>
+    <view class="find" bindtap="find">
+      <image src='../images/find.png'></image>
+    </view>
+  </view>
+  <view class="film">
+    <block wx:for="{{cfilms}}" data-id="{{item.id}}">
+      <navigator url="../film/film?id={{item.id}}">
+        <view class="showing-film">
+          <view class="film-cover">
+            <image class="film-img" src="{{item.images.large}}">
+              <view class="film-rating">{{item.mainland_pubdate == ''?'敬请期待':item.mainland_pubdate + '上映'}}</view>
+            </image>
+            <view class="film-intro">
+              <view class="film-title">{{item.title}}</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view class='bottom' hidden="{{c_bottom}}">—————没有更多了—————</view>
+</scroll-view>

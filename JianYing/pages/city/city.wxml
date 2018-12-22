@@ -1,0 +1,32 @@
+<!--pages/city/city.wxml-->
+<view class='pinyin'>
+  <view id="当前" bindtap='clickMenu'>当前</view>
+  <view id="定位" bindtap='clickMenu'>定位</view>
+  <view id="热门" bindtap='clickMenu'>热门</view>
+  <view wx:for="{{pinyin}}" bindtap='clickMenu' id="{{item}}">{{item}}</view>
+</view>
+
+<loading hidden="{{loading}}">
+  加载中....
+</loading>
+
+<scroll-view class="city" scroll-top="{{scrollTop}}" scroll-y='true'>
+  <view>
+    <view class="citypos">当前城市</view>
+    <view class='city-tag'>
+      <view class="mycity" bindtap='changecity' id="{{dingwei}}">{{mycity}}</view>
+    </view>
+    <view class="citypos">定位城市</view>
+    <view class='city-tag'>
+      <view class="mycity" bindtap='changecity' id="{{dingwei}}">{{dingwei}}</view>
+    </view>
+    <view class="citypos">热门城市</view>
+    <view class='city-tag'>
+      <view class='popcities' wx:for="{{popularcities}}" id="{{item.n}}" wx:key="{{popitem.id}}" bindtap='changecity'>{{item.n}}</view>
+    </view>
+  </view>
+  <view wx:for="{{cities}}">
+    <view class="citypos" id="{{item[0].pinyinShort[0]}}">{{item[0].pinyinFull[0]}}</view>
+    <view class='cities' wx:for="{{item}}" id="{{item.n}}" bindtap='changecity'>{{item.n}}</view>
+  </view>
+</scroll-view>

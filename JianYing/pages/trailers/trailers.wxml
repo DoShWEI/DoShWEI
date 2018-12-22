@@ -1,0 +1,2 @@
+<!--pages/trailers/trailers.wxml-->
+<web-view src = '{{trailer_url}}'></web-view>

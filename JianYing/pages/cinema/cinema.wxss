@@ -1,0 +1,79 @@
+/* pages/cinema/cinema.wxss */
+
+.find {
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-bottom: 1rpx solid #ccc;
+  background-color: #fafafa;
+  align-items: center;
+  top: 0;
+}
+
+.city {
+  font-size: 30rpx;
+  color: #666;
+  margin-right: 30rpx;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 600rpx;
+  border: 1rpx solid #ccc;
+  background-color: #fafafa;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.btn image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.cinema{
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  background-color: #eee;
+}
+
+.cinemas{
+  margin-top: 100rpx;
+}
+
+.citycinema{
+  height: 200rpx;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  border-top: 1rpx solid #ccc;
+  background-color: #fafafa;
+}
+
+.title{
+  padding: 50rpx 0rpx 20rpx 20rpx;
+  font-size: 30rpx;
+}
+
+.address{
+  padding: 0rpx 0rpx 20rpx 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.bottom{
+  background-color: #eee;
+  height: 150rpx;
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+  color: #ccc;
+}

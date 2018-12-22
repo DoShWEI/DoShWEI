@@ -1,0 +1,89 @@
+<!--pages/film/film.wxml-->
+<view class='film'>
+  <loading hidden="{{loading}}">
+    加载中....
+  </loading>
+
+  <view class='bisic' style='background-image: url({{basic.images.large}})'>
+    <view class="img">
+      <image src='{{basic.images.large}}'></image>
+    </view>
+    <view class='Introduction'>
+      <view class="title">{{basic.title}}
+        <view class="titleEn">{{basic.original_title}}</view>
+      </view>
+      <view class='rating'>评分：{{basic.rating.average
+        <=0? "暂无":basic.rating.average}}({{basic.ratings_count}}人评分)</view>
+          <view>
+            <text class='film-intro' wx:for='{{basic.genres}}'>{{item}} </text>
+          </view>
+          <view class="film-intro">时长：{{basic.durations[0]}}</view>
+          <view class="film-intro">上映时间：{{basic.mainland_pubdate}}</view>
+          <view class='collection' bindtap='collection' data-filmimg='{{basic.images.large}}' data-filmname='{{basic.title}}' data-rating='{{basic.rating.average}}'>
+            <image src='{{collectionimg}}'></image>
+            <text>{{collection}}</text>
+          </view>
+      </view>
+    </view>
+
+    <view bindtap="fold" class='fold'>
+      <view class='story' style='height: {{storyheight}}rpx'>{{basic.summary}}</view>
+      <view class='triangle'>
+        <image src='{{triangle}}'></image>
+      </view>
+    </view>
+
+    <view class="actor">
+      <text>演职人员</text>
+      <scroll-view scroll-x class="actors" style='width:{{width}}px'>
+        <block wx:for='{{basic.directors}}'>
+          <image src='{{item.avatars.large}}'>
+            <text class='name'>{{item.name}}</text>
+            <text class='roleName'>导演</text>
+          </image>
+        </block>
+        <block wx:for="{{basic.casts}}">
+          <image src='{{item.avatars.large}}'>
+            <text class='name'>{{item.name}}</text>
+            <text class='roleName'>{{item.name_en}}</text>
+          </image>
+        </block>
+      </scroll-view>
+    </view>
+
+    <view class="trailers">
+      <text>预告片</text>
+      <scroll-view scroll-x class="trailer" style='width:{{width}}px'>
+        <block wx:for="{{basic.trailers}}">
+            <image src='{{item.medium}}' data-url='{{item.resource_url}}' bindtap='trailervideo'>
+              <text class= 'trailer_title'>{{item.title}}</text>
+            </image>
+        </block>
+      </scroll-view>
+    </view>
+
+    <view class='comment'>
+      <text>评论</text>
+      <view class='plus'>
+        <text>精选</text>
+      </view>
+      <view class='pluscomment' wx:for='{{basic.popular_comments}}'>
+        <view class='Commentatorimg'>
+          <image src='{{item.author.avatar}}' class='headImg'></image>
+        </view>
+        <view class='Commentator'>
+          <view class='useful' style='color: #{{usefulcolor}}'>
+            <image src='{{useful}}'></image>{{item.useful_count}}
+          </view>
+          <view class='nickname'>{{item.author.name}}</view>
+          <view class='commentrating'>给这部电影打了{{item.rating.value}}分</view>
+          <view class='commentrating'>评论时间：{{item.created_at}}</view>
+          <view class='content'>{{item.content}}</view>
+        </view>
+      </view>
+      <view class='moreplus'>
+        <navigator url="../comment/comment?id={{id}}">加载全部{{basic.photos_count}}条评论...</navigator>
+      </view>
+    </view>
+
+  </view>

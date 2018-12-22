@@ -1,0 +1,25 @@
+<!--pages/comment/comment.wxml-->
+<scroll-view class='comment' style='height: {{height}}rpx' bindscrolltolower="loadmore" scroll-y>
+<loading hidden="{{loading}}">
+  加载中....
+</loading>
+
+  <text>评论</text>
+    <view class='plus'>
+      <text>精选</text>
+    </view>
+    <view class='pluscomment' wx:for='{{comments}}'>
+      <view class='Commentatorimg'>
+        <image src='{{item.author.avatar}}' class='headImg'></image>
+      </view>
+      <view class='Commentator'>
+                <view class='useful' style='color: #{{usefulcolor}}'>
+            <image src='{{useful}}'></image>{{item.useful_count}}
+          </view>
+        <view class='nickname'>{{item.author.name}}</view>
+        <view class='commentrating'>给的评分：{{item.rating.value}}分</view>
+        <view class='commentrating'>评论时间：{{item.created_at}}</view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,173 @@
+/* pages/moviesearch/moviesearch.wxss */
+
+.moviesearch {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.find {
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-bottom: 1rpx solid #ccc;
+  background-color: white;
+  align-items: center;
+  top: 0;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 70%;
+  background-color: #eee;
+  border-radius: 10rpx;
+}
+
+.searchbar image {
+  height: 60rpx;
+  width: 10%;
+}
+
+.searchbar input {
+  height: 100%;
+  width: 90%;
+}
+
+.cancel {
+  width: 10%;
+  margin-left: 20rpx;
+  color: mediumblue;
+}
+
+.results{
+  margin-top: 100rpx;
+}
+
+.films{
+  height: 300rpx;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  border-top: 1rpx solid #ccc;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.films image{
+  height: 250rpx;
+  width: 180rpx;
+  margin-left: 50rpx;
+  border-radius: 20rpx;
+}
+
+.istrue{
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 50%;
+  color: #ccc;
+}
+
+.bisic {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  background-color: white;
+}
+
+.img {
+  width: 45%;
+}
+
+.img image {
+  width: 280rpx;
+  height: 406rpx;
+  margin: 20rpx 30rpx;
+  border: 5rpx solid #ccc;
+  border-radius: 10rpx;
+}
+
+.Introduction {
+  width: 55%;
+}
+
+.film-intro {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.title {
+  width: 100%;
+  font-size: 36rpx;
+  color: #666;
+  font-weight: bold;
+  margin-top: 40rpx;
+}
+
+.titleEn {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.rating {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.type {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.actors{
+    font-size: 26rpx;
+  color: #666;
+}
+.actor{
+  font-size: 26rpx;
+  color: #666;
+}
+
+.bottom{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: #fafafa;
+  height: 150rpx;
+}
+
+.bottom view{
+  width: 100%;
+  background-color: #fafafa;
+  height: 150rpx;
+}
+
+.bottom text{
+  height: 100rpx;
+  width: 100%;
+  color: #ccc;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.last {
+  position: absolute;
+  right: 0rpx;
+  color: #059;
+  font-size: 34rpx;
+  margin: 20rpx 180rpx;
+}
+
+.next {
+  position: absolute;
+  right: 0rpx;
+  color: #059;
+  font-size: 34rpx;
+  margin: 20rpx 50rpx;
+}

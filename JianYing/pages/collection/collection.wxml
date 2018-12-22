@@ -1,0 +1,23 @@
+<!--pages/collection/collection.wxml-->
+<view class="films">
+  <view class="film" hidden='{{!nothing}}'>
+    <block wx:for="{{films}}" data-id="{{item.id}}">
+      <navigator url="../film/film?id={{item.id}}&cityid={{cityid}}">
+        <view class="sfilm">
+          <view class="film-cover">
+            <image class="film-img" src="{{item.img}}">
+              <view class="film-rating">{{item.rating
+                <=0? "暂无":item.rating}}</view>
+            </image>
+            <view class="film-intro">
+              <view class="film-title">{{item.name}}</view>
+            </view>
+            </view>
+          </view>
+      </navigator>
+    </block>
+    </view>
+    <view class='nothing' hidden='{{nothing}}'>
+    <image src='../images/nothing.png'></image>
+    <text>你还没有任何收藏</text></view>
+  </view>

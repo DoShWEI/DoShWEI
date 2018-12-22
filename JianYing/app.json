@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/city/city",
+    "pages/film/film",
+    "pages/comment/comment",
+    "pages/cinema/cinema",
+    "pages/mypage/mypage",
+    "pages/collection/collection",
+    "pages/trailers/trailers",
+    "pages/moviesearch/moviesearch"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#059",
+    "navigationBarTitleText": "简影",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#059",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "电影",
+        "iconPath": "pages/images/film_1.png",
+        "selectedIconPath": "pages/images/film_2.png"
+      },
+      {
+        "pagePath": "pages/cinema/cinema",
+        "text": "影院",
+        "iconPath": "pages/images/cinema_1.png",
+        "selectedIconPath": "pages/images/cinema_2.png"
+      },
+      {
+        "pagePath": "pages/mypage/mypage",
+        "text": "我的",
+        "iconPath": "pages/images/my_1.png",
+        "selectedIconPath": "pages/images/my_2.png"
+      }
+    ]
+  }
+}

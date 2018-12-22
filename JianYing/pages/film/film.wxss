@@ -1,0 +1,308 @@
+/* pages/film/film.wxss */
+
+.film {
+  background-color: #eee;
+}
+
+.bisic {
+  display: flex;
+  flex-wrap: wrap;
+  background-size: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.bisic::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: inherit;
+  filter: blur(8rpx);
+  z-index: 2;
+}
+
+.img {
+  width: 45%;
+  z-index: 3;
+}
+
+.img image {
+  width: 280rpx;
+  height: 406rpx;
+  margin: 20rpx 30rpx;
+  border: 5rpx solid #ccc;
+  border-radius: 10rpx;
+}
+
+.Introduction {
+  width: 55%;
+  z-index: 4;
+}
+
+.film-intro {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: white;
+}
+
+.title {
+  width: 100%;
+  font-size: 36rpx;
+  color: white;
+  font-weight: bold;
+  margin-top: 40rpx;
+}
+
+.titleEn {
+  width: 100%;
+  font-size: 20rpx;
+  color: white;
+}
+
+.rating {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  color: white;
+}
+
+.type {
+  font-size: 26rpx;
+  color: white;
+}
+
+.collection {
+  width: 250rpx;
+  height: 60rpx;
+  background-color: #666;
+  margin-top: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+}
+
+.collection image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.collection text {
+  font-size: 30rpx;
+  color: white;
+  margin-left: 20rpx;
+  letter-spacing: 5rpx;
+}
+
+.fold {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2rpx solid #ccc;
+  background-color: white;
+}
+
+.story {
+  font-size: 28rpx;
+  padding: 24rpx;
+  overflow: hidden;
+}
+
+.triangle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.triangle image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.actor {
+  background-color: white;
+  margin-top: 20rpx;
+  border-top: 2rpx solid #ccc;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.actors {
+  height: 250rpx;
+  display: flex;
+  flex-flow: row;
+  white-space: nowrap;
+}
+
+.actor text {
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.actors image {
+  width: 120rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 10rpx;
+}
+
+.actors text {
+  font-size: 18rpx;
+}
+
+.trailers {
+  background-color: white;
+  margin-top: 20rpx;
+  border-top: 2rpx solid #ccc;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.trailers text {
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.trailer {
+  display: flex;
+  flex-flow: row;
+  white-space: nowrap;
+}
+
+.trailer image {
+  width: 360rpx;
+  height: 200rpx;
+  margin: 20rpx 20rpx 70rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.trailer text{
+  font-size: 30rpx;
+}
+
+.trailer_title {
+  width: 300rpx;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.name {
+  width: 100rpx;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.roleName {
+  width: 100rpx;
+  color: #666;
+  margin-top: 30rpx;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.office {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.comment {
+  margin-top: 20rpx;
+  background-color: white;
+  border-top: 2rpx solid #ccc;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.plus {
+  font-size: 18rpx;
+  color: #666;
+  padding-top: 20rpx;
+}
+
+.pluscomment {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment text {
+  width: 100%;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.Commentatorimg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 15%;
+  padding-top: 20rpx;
+}
+
+.Commentator {
+  width: 85%;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.headImg {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 45rpx;
+}
+
+.nickname {
+  padding: 20rpx 0rpx 5rpx 0rpx;
+  font-size: 25rpx;
+  font-weight: bold;
+}
+
+.commentrating {
+  padding: 5rpx;
+  font-size: 20rpx;
+  color: #666;
+}
+
+.content {
+  font-size: 25rpx;
+  padding: 20rpx 20rpx 20rpx 0rpx;
+}
+
+.moreplus {
+  position: absolute;
+  right: 0rpx;
+  color: #059;
+  font-size: 34rpx;
+  margin: 50rpx;
+}
+
+.useful {
+  width: 150rpx;
+  height: 60rpx;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  border-radius: 30rpx;
+  position: absolute;
+  right: 20rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.useful image {
+  width: 40rpx;
+  height: 40rpx;
+}

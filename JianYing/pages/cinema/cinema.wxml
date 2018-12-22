@@ -1,0 +1,22 @@
+<!--pages/cinema/cinema.wxml-->
+<!--绑定点击事件-->
+<loading hidden="{{loading}}">
+  加载中....
+</loading>
+
+<scroll-view style='height: {{height}}px' scroll-y class='cinema'>
+  <view class='find' style='position:{{bindscroll}}'>
+    <view class="city" bindtap="tabChangeCity" >{{city}}</view>
+    <view class="btn">
+      <image src='../images/find.png'></image>
+      <text>搜索</text>
+    </view>
+  </view>
+  <view class='cinemas'>
+  <view wx:for='{{cinema}}' class='citycinema'>
+    <view class='title'>{{item.title}}</view>
+    <view class='address'>{{item.address}}</view>
+  </view>
+  </view>
+  <view class='bottom' hidden="{{isbottom}}">—————没有更多了—————</view>
+</scroll-view>

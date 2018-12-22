@@ -1,0 +1,67 @@
+/* pages/city/city.wxss */
+
+.city {
+  width: 90%;
+}
+
+.pinyin{
+  width: 10%;
+  height: 100%;
+  padding-top: 50rpx;
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  right: 0rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #666;
+  background-color: #eee;
+}
+
+.citypos {
+  background-color: #eee;
+  font-size: 30rpx;
+  padding-left: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #666;
+}
+
+.city-tag {
+  margin: 5rpx 10rpx;
+  display: flex;
+  font-weight: bold;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.mycity {
+  padding: 8rpx 50rpx;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  font-size: 35rpx;
+  box-shadow: 0 0 0 1px #ccc;
+  border-top: 1px solid #fff;
+  border-radius: 10rpx;
+  background-color: #fafafa;
+  color: #666;
+}
+
+.popcities {
+  padding: 8rpx 50rpx;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  font-size: 35rpx;
+  box-shadow: 0 0 0 1px #ccc;
+  border-top: 1px solid #fff;
+  border-radius: 10rpx;
+  background-color: #fafafa;
+  color: #666;
+}
+
+.cities {
+  font-size: 35rpx;
+  height: 70rpx;
+  width: 85%;
+  line-height: 70rpx;
+  margin-left: 50rpx;
+  border-bottom: 1px solid #ccc;
+}
