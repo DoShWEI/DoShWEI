@@ -14,7 +14,7 @@
       </view>
       <view class='rating'>评分：{{basic.rating.average
         <=0? "暂无":basic.rating.average}}({{basic.ratings_count}}人评分)</view>
-          <view>
+          <view class='genres'>类型：
             <text class='film-intro' wx:for='{{basic.genres}}'>{{item}} </text>
           </view>
           <view class="film-intro">时长：{{basic.durations[0]}}</view>
@@ -55,35 +55,18 @@
       <text>预告片</text>
       <scroll-view scroll-x class="trailer" style='width:{{width}}px'>
         <block wx:for="{{basic.trailers}}">
-            <image src='{{item.medium}}' data-url='{{item.resource_url}}' bindtap='trailervideo'>
-              <text class= 'trailer_title'>{{item.title}}</text>
-            </image>
+          <image src='{{item.medium}}' data-url='{{item.resource_url}}' bindtap='trailervideo'>
+            <text class='trailer_title'>{{item.title}}</text>
+          </image>
         </block>
       </scroll-view>
     </view>
 
-    <view class='comment'>
-      <text>评论</text>
-      <view class='plus'>
-        <text>精选</text>
-      </view>
-      <view class='pluscomment' wx:for='{{basic.popular_comments}}'>
-        <view class='Commentatorimg'>
-          <image src='{{item.author.avatar}}' class='headImg'></image>
-        </view>
-        <view class='Commentator'>
-          <view class='useful' style='color: #{{usefulcolor}}'>
-            <image src='{{useful}}'></image>{{item.useful_count}}
-          </view>
-          <view class='nickname'>{{item.author.name}}</view>
-          <view class='commentrating'>给这部电影打了{{item.rating.value}}分</view>
-          <view class='commentrating'>评论时间：{{item.created_at}}</view>
-          <view class='content'>{{item.content}}</view>
-        </view>
-      </view>
-      <view class='moreplus'>
-        <navigator url="../comment/comment?id={{id}}">加载全部{{basic.photos_count}}条评论...</navigator>
-      </view>
+    <comment basic='{{basic.popular_comments}}'>
+    </comment>
+    
+    <view class='more'>
+      <navigator url="../comment/comment?id={{id}}">加载全部{{basic.photos_count}}条评论...</navigator>
     </view>
 
   </view>

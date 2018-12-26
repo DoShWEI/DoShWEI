@@ -1,0 +1,40 @@
+/* Component/search/search.wxss */
+.find {
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-bottom: 1rpx solid #ccc;
+  background-color: white;
+  align-items: center;
+  top: 0;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 70%;
+  background-color: #eee;
+  border-radius: 10rpx;
+}
+
+.searchbar image {
+  height: 60rpx;
+  width: 10%;
+}
+
+.searchbar input {
+  height: 100%;
+  width: 90%;
+}
+
+.cancel {
+  width: 10%;
+  margin-left: 20rpx;
+  color: mediumblue;
+}

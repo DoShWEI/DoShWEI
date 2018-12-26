@@ -3,16 +3,12 @@
   加载中....
 </loading>
 <scroll-view style='height: {{height}}px' scroll-y class='moviesearch' scroll-top="{{scrollTop}}">
-  <view class='find'>
-    <view class='searchbar'>
-      <image src='../images/find.png'></image>
-      <input placeholder="搜索" focus='true' bindconfirm='search' confirm-type='search' />
-    </view>
-    <view class='cancel' bindtap='cancel'>取消</view>
+
+  <search bind:search="_search" bind:cancel="_cancel"></search>
+  <view class='istrue' hidden="{{istrue}}" style='height: {{height}}px'>
+    <image src='../../images/unfind.png'></image>
+    <text>抱歉，没有找到相关电影</text>
   </view>
-
-  <view class='istrue' hidden="{{istrue}}" style='height: {{height}}px'>抱歉，没有找到相关电影</view>
-
 
   <view class='results'>
     <block wx:for='{{films}}'>
@@ -25,7 +21,7 @@
             <view class="titleEn">{{item.original_title}}</view>
           </view>
           <view class='rating'>评分：{{item.rating.average ==''? "暂无":item.rating.average}}</view>
-          <view>
+          <view class='genres'>类型：
             <text class='film-intro' wx:for='{{item.genres}}'>{{item}} </text>
           </view>
           <view class="film-intro">时长：{{item.durations[0]==undefined?"暂无":item.durations[0]}}</view>
@@ -37,5 +33,8 @@
   </view>
   <view class='last' bindtap='last' hidden="{{last}}">上一页</view>
   <view class='next' bindtap='next' hidden="{{next}}">下一页</view>
-  <view class='bottom' hidden="{{isbottom}}"><view></view><text>—————没有更多了—————</text></view>
+  <view class='bottom' hidden="{{isbottom}}">
+    <view></view>
+    <text>—————没有更多了—————</text>
+  </view>
 </scroll-view>

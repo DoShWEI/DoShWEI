@@ -5,72 +5,27 @@
   background-color: #fafafa;
 }
 
-.find {
-  width: 100%;
-  text-align: center;
-  height: 100rpx;
-  line-height: 100rpx;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  border-bottom: 1rpx solid #ccc;
-  background-color: white;
-  align-items: center;
-  top: 0;
-}
-
-.searchbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 70%;
-  background-color: #eee;
-  border-radius: 10rpx;
-}
-
-.searchbar image {
-  height: 60rpx;
-  width: 10%;
-}
-
-.searchbar input {
-  height: 100%;
-  width: 90%;
-}
-
-.cancel {
-  width: 10%;
-  margin-left: 20rpx;
-  color: mediumblue;
-}
-
 .results{
   margin-top: 100rpx;
-}
-
-.films{
-  height: 300rpx;
-  margin-top: 20rpx;
-  border-bottom: 1rpx solid #ccc;
-  border-top: 1rpx solid #ccc;
-  background-color: white;
-  display: flex;
-  align-items: center;
-}
-
-.films image{
-  height: 250rpx;
-  width: 180rpx;
-  margin-left: 50rpx;
-  border-radius: 20rpx;
+  background-color: #eee;
 }
 
 .istrue{
-  text-align: center;
-  font-size: 30rpx;
-  padding-top: 50%;
-  color: #ccc;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.istrue image{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.istrue text{
+  color: #666;
+  font-weight: bold;
 }
 
 .bisic {
@@ -94,6 +49,11 @@
 
 .Introduction {
   width: 55%;
+}
+
+.genres{
+  font-size: 26rpx;
+  color: #666;
 }
 
 .film-intro {

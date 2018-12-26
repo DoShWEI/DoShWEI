@@ -1,0 +1,5 @@
+<!--pages/blankpages/blankpages.wxml-->
+<view class='nothing'>
+  <image src='../../images/nothing.png'></image>
+  <text>你还没有{{nothing}}</text>
+</view>

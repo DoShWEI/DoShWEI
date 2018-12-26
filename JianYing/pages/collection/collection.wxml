@@ -18,6 +18,6 @@
     </block>
     </view>
     <view class='nothing' hidden='{{nothing}}'>
-    <image src='../images/nothing.png'></image>
+    <image src='../../images/nothing.png'></image>
     <text>你还没有任何收藏</text></view>
   </view>

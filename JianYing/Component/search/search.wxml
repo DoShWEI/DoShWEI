@@ -1,0 +1,8 @@
+<!--Component/search/search.wxml-->
+  <view class='find'>
+    <view class='searchbar'>
+      <image src='../../images/find.png'></image>
+      <input placeholder="搜索" focus='true' bindconfirm='_search' confirm-type='search' />
+    </view>
+    <view class='cancel' bindtap='_cancel'>{{cancel}}</view>
+  </view>

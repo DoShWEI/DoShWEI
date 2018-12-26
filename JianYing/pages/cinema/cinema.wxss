@@ -39,41 +39,62 @@
   width: 50rpx;
 }
 
-.cinema{
+.cinema {
   width: 100%;
   position: fixed;
   bottom: 0rpx;
   background-color: #eee;
 }
 
-.cinemas{
-  margin-top: 100rpx;
+.cinemas {
+  margin-top: 110rpx;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
-.citycinema{
+.citycinema {
   height: 200rpx;
   margin-top: 20rpx;
-  border-bottom: 1rpx solid #ccc;
-  border-top: 1rpx solid #ccc;
   background-color: #fafafa;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
 }
 
-.title{
+.title {
+  text-align: center;
   padding: 50rpx 0rpx 20rpx 20rpx;
   font-size: 30rpx;
 }
 
-.address{
+.address {
+  text-align: center;
   padding: 0rpx 0rpx 20rpx 20rpx;
   font-size: 24rpx;
   color: #666;
 }
 
-.bottom{
+.bottom {
   background-color: #eee;
-  height: 150rpx;
+  height: 100rpx;
   text-align: center;
   font-size: 30rpx;
   padding-top: 20rpx;
   color: #ccc;
+  margin-top: 130rpx;
+}
+
+.last {
+  position: absolute;
+  right: 0rpx;
+  color: #059;
+  font-size: 34rpx;
+  margin: 50rpx 180rpx 50rpx;
+}
+
+.next {
+  position: absolute;
+  right: 0rpx;
+  color: #059;
+  font-size: 34rpx;
+  margin: 50rpx 50rpx 50rpx;
 }

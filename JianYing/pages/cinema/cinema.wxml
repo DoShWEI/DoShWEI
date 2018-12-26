@@ -4,19 +4,21 @@
   加载中....
 </loading>
 
-<scroll-view style='height: {{height}}px' scroll-y class='cinema'>
+<scroll-view style='height: {{height}}px' scroll-y class='cinema' scroll-top="{{scrollTop}}">
   <view class='find' style='position:{{bindscroll}}'>
-    <view class="city" bindtap="tabChangeCity" >{{city}}</view>
-    <view class="btn">
-      <image src='../images/find.png'></image>
+    <view class="city" bindtap="tabChangeCity">{{city}}</view>
+    <view class="btn" bindtap='search'>
+      <image src='../../images/find.png'></image>
       <text>搜索</text>
     </view>
   </view>
   <view class='cinemas'>
-  <view wx:for='{{cinema}}' class='citycinema'>
-    <view class='title'>{{item.title}}</view>
-    <view class='address'>{{item.address}}</view>
+    <view wx:for='{{cinema}}' class='citycinema' data-location='{{item.location}}'>
+      <view class='title'>{{item.title}}</view>
+      <view class='address'>{{item.address}}</view>
+    </view>
   </view>
-  </view>
+  <view class='last' bindtap='last' hidden="{{last}}">上一页</view>
+  <view class='next' bindtap='next' hidden="{{next}}">下一页</view>
   <view class='bottom' hidden="{{isbottom}}">—————没有更多了—————</view>
 </scroll-view>

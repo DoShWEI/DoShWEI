@@ -7,11 +7,10 @@ Page({
   data: {
     id: '',
     height: '',
-    comments: {},
+    comments: [],
     loading: false,
-    count: 20,
-    useful: '../images/useful_1.png',
-    usefulcolor: 'ccc',
+    start: 0,
+    total: '',
   },
 
   /**
@@ -24,7 +23,7 @@ Page({
     console.log(options.isplus);
 
     wx.request({
-      url: 'http://api.douban.com/v2/movie/subject/' + id + '/comments?apikey=0b2bdeda43b5688921839c8ecb20399b&count=20',
+      url: 'http://api.douban.com/v2/movie/subject/' + id + '/comments?apikey=0b2bdeda43b5688921839c8ecb20399b&start=0',
       data: {}, //不要求数据
       header: {
         "Content-Type": "json"
@@ -51,30 +50,43 @@ Page({
         })
       }
     })
+    this.comment = this.selectComponent("#comment");
   },
 
   loadmore: function() {
     let that = this;
-    let id = this.data.id;
-    let count = that.data.count + 20
-    that.setData({
-      loading: false,
-    })
-    wx.request({
-      url: 'http://api.douban.com/v2/movie/subject/' + id + '/comments?apikey=0b2bdeda43b5688921839c8ecb20399b&count=' + count,
-      data: {}, //不要求数据
-      header: {
-        "Content-Type": "json"
-      },
-      success(res) {
-        console.log(res.data)
-        that.setData({
-          comments: res.data.comments,
-          count: count + 20,
-          loading: true,
-        })
-      }
-    })
+    let id = that.data.id;
+    let start = that.data.start + 1;
+    let comments = that.data.comments;
+    if (that.data.start * 20 < that.data.total) {
+      that.setData({
+        loading: false,
+      })
+      wx.request({
+        url: 'http://api.douban.com/v2/movie/subject/' + id + '/comments?apikey=0b2bdeda43b5688921839c8ecb20399b&start=' + start,
+        data: {}, //不要求数据
+        header: {
+          "Content-Type": "json"
+        },
+        success(res) {
+          console.log(res.data)
+          for (let n = 0; n < res.data.comments.length; n++) {
+            comments.push(res.data.comments[n]);
+          }
+          that.setData({
+            comments: comments,
+            start: start,
+            loading: true,
+          })
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '抱歉,没有了...',
+        image: '../../images/sorry.png',
+        duration: 1000
+      })
+    }
   },
 
 })

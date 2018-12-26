@@ -1,4 +1,7 @@
 {
   "enablePullDownRefresh": true,
-  "backgroundColor": "#fafafa"
+  "backgroundColor": "#fafafa",
+  "usingComponents": {
+    "comment": "/Component/comment/comment"
+  }
 }

@@ -8,7 +8,9 @@
     "pages/mypage/mypage",
     "pages/collection/collection",
     "pages/trailers/trailers",
-    "pages/moviesearch/moviesearch"
+    "pages/moviesearch/moviesearch",
+    "pages/blankpages/blankpages",
+    "pages/cinemasearch/cinemasearch"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,20 +25,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "电影",
-        "iconPath": "pages/images/film_1.png",
-        "selectedIconPath": "pages/images/film_2.png"
+        "iconPath": "images/film_1.png",
+        "selectedIconPath": "images/film_2.png"
       },
       {
         "pagePath": "pages/cinema/cinema",
         "text": "影院",
-        "iconPath": "pages/images/cinema_1.png",
-        "selectedIconPath": "pages/images/cinema_2.png"
+        "iconPath": "images/cinema_1.png",
+        "selectedIconPath": "images/cinema_2.png"
       },
       {
         "pagePath": "pages/mypage/mypage",
         "text": "我的",
-        "iconPath": "pages/images/my_1.png",
-        "selectedIconPath": "pages/images/my_2.png"
+        "iconPath": "images/my_1.png",
+        "selectedIconPath": "images/my_2.png"
       }
     ]
   }

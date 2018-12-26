@@ -1,0 +1,8 @@
+<!--pages/cinemasearch/cinemasearch.wxml-->
+<view>
+  <search bind:search="_search" bind:cancel="_cancel"></search>
+  <view class='istrue' hidden="{{istrue}}" style='height: {{height}}px'>
+    <image src='../../images/unfind.png'></image>
+    <text>抱歉，没有找到相关影院</text>
+  </view>
+</view>

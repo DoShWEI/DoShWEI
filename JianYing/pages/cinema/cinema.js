@@ -1,6 +1,6 @@
 // pages/cinema/cinema.js
 // 引入SDK核心类
-var QQMapWX = require('../qqmap/qqmap-wx-jssdk.js');
+var QQMapWX = require('../../qqmap/qqmap-wx-jssdk.js');
 
 // 实例化API核心类
 var qqmapsdk = new QQMapWX({
@@ -19,6 +19,11 @@ Page({
     lat: '',
     lng: '',
     isbottom: true,
+    last: true,
+    next: true,
+    page_index: 1,
+    scrollTop: '',
+    count: '',
   },
 
   /**
@@ -100,22 +105,118 @@ Page({
 
   nearby_search: function() {
     let that = this;
+    let page_index = that.data.page_index;
     let lat = that.data.lat;
     let lng = that.data.lng;
 
     qqmapsdk.search({
       keyword: '影院', //搜索关键词
       location: lat + ',' + lng, //设置周边搜索中心点
+      page_size: 20,
+      page_index: page_index,
       success: function(res) { //搜索成功后的回调
-        console.log(res.data);
+        console.log(res);
+        let cinema = res.data;
+        if (res.count > 20) {
+          that.setData({
+            cinema: cinema,
+            loading: true,
+            count: res.count,
+            next: false,
+          })
+        } else {
+          that.setData({
+            cinema: cinema,
+            loading: true,
+            count: res.count,
+            next: true,
+            last: true,
+            isbottom: false,
+          })
+        }
+      },
+    });
+  },
+
+  last: function() {
+    let that = this;
+    let count = that.data.count;
+    let page_index = that.data.page_index - 1;
+    let lat = that.data.lat;
+    let lng = that.data.lng;
+
+    that.setData({
+      loading: false,
+    })
+    qqmapsdk.search({
+      keyword: '影院', //搜索关键词
+      location: lat + ',' + lng, //设置周边搜索中心点
+      page_size: 20,
+      page_index: page_index,
+      success: function(res) { //搜索成功后的回调
+        console.log(res);
         let cinema = res.data;
         that.setData({
           cinema: cinema,
           loading: true,
-          isbottom: false,
+          scrollTop: 0,
+          last: false,
+          next: false,
+          page_index: page_index,
+          isbottom: true,
         })
+        if (page_index == 1) {
+          that.setData({
+            last: true,
+          })
+        }
       },
     });
   },
+
+  next: function() {
+    let that = this;
+    let count = that.data.count;
+    let page_index = that.data.page_index + 1;
+    let lat = that.data.lat;
+    let lng = that.data.lng;
+
+    that.setData({
+      loading: false,
+    })
+    qqmapsdk.search({
+      keyword: '影院', //搜索关键词
+      location: lat + ',' + lng, //设置周边搜索中心点
+      page_size: 20,
+      page_index: page_index,
+      success: function(res) { //搜索成功后的回调
+        console.log(res);
+        let cinema = res.data;
+        that.setData({
+          cinema: cinema,
+          loading: true,
+          scrollTop: 0,
+          last: false,
+          next: false,
+          page_index: page_index,
+        })
+        if (page_index * 20 > count) {
+          that.setData({
+            next: true,
+            isbottom: false,
+          })
+        }
+      },
+    });
+  },
+
+  search:function(){
+    wx.navigateTo({
+      url: '../cinemasearch/cinemasearch',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  }
 
 })

@@ -1,11 +1,41 @@
 <!--pages/mypage/mypage.wxml-->
 <view class="container">
-  <view class="userinfo">
+  <view class="userinfo" style='background-image: url({{userInfo.avatarUrl}})'>
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
     <view class="userinfo-nickname">{{userInfo.nickName}}</view>
   </view>
-  <view class='collection' bindtap='collection'>
-    <image src='../images/mycollections.png'></image>
-    <text>我的收藏({{mycollections}})</text>
+  <view class='my'>
+    <view class='collection' bindtap='newpage' id='message'>
+      <image src='../../images/message.png' class='collectionimage'></image>
+      <text class = 'collectiontext'>我的消息(空)</text>
+      <image src='../../images/right.png' class='rightimage'></image>
+    </view>
+    <view class='mycollection' bindtap='collection'>
+      <image src='../../images/mycollections.png' class='collectionimage'></image>
+      <text class = 'collectiontext'>收藏的电影({{mycollections}})</text>
+      <image src='../../images/right.png' class='rightimage'></image>
+    </view>
+    <view class='collection' bindtap='newpage' id='seen'>
+      <image src='../../images/seen.png' class='collectionimage'></image>
+      <text class = 'collectiontext'>看过的电影(空)</text>
+      <image src='../../images/right.png' class='rightimage'></image>
+    </view>
+  </view>
+    <view class='my'>
+    <view class='collection' bindtap='newpage' id='order'>
+      <image src='../../images/order.png' class='collectionimage'></image>
+      <text class = 'collectiontext'>我的订单</text>
+      <image src='../../images/right.png' class='rightimage'></image>
+    </view>
+    <view class='mycollection' bindtap='collection' id='coupon'>
+      <image src='../../images/coupon.png' class='collectionimage'></image>
+      <text class = 'collectiontext'>我的优惠券</text>
+      <image src='../../images/right.png' class='rightimage'></image>
+    </view>
+    <view class='collection' bindtap='newpage' id='ticket'>
+      <image src='../../images/ticket.png' class='collectionimage'></image>
+      <text class = 'collectiontext'>我的电影票</text>
+      <image src='../../images/right.png' class='rightimage'></image>
+    </view>
   </view>
 </view>

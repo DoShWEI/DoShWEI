@@ -13,7 +13,6 @@ Page({
     citytop: [],
     dingwei: '正在定位...',
     mycity: '',
-    cityid: '',
     toView: '',
     key: '',
     loading: false,
@@ -69,15 +68,6 @@ Page({
 
         console.log(cities);
         that.queryMultipleNodes();
-
-        let mycity = that.data.mycity;
-        for (let m = 0; m < city.length; m++) {
-          if (mycity == city[m].n) {
-            that.setData({
-              cityid: city[m].id
-            })
-          }
-        }
       }
 
     })
@@ -168,7 +158,6 @@ Page({
 
   changecity: function(e) {
     let id = e.target.id;
-    let cityid = this.data.cityid;
     let key = this.data.key
     this.setData({
       mycity: id,
@@ -176,11 +165,11 @@ Page({
     setTimeout(function() {
       if (key == 'film') {
         wx.reLaunch({
-          url: '../index/index?id=' + id + '&cityid=' + cityid
+          url: '../index/index?id=' + id
         })
       } else if (key == 'cinema') {
         wx.reLaunch({
-          url: '../cinema/cinema?id=' + id + '&cityid=' + cityid
+          url: '../cinema/cinema?id=' + id
         })
       }
     }, 800);

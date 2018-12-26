@@ -1,0 +1,19 @@
+/* pages/blankpages/blankpages.wxss */
+.nothing{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50%;
+}
+
+.nothing image{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.nothing text{
+  color: #666;
+  font-weight: bold;
+}

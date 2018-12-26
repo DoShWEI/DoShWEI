@@ -31,15 +31,16 @@ Page({
         })
       }
     })
+    this.search = this.selectComponent("#search");
   },
 
-  cancel: function() {
+  _cancel: function() {
     wx.navigateBack({
       delta: 1,
     })
   },
 
-  search: function(e) {
+  _search: function(e) {
     let value = e.detail.value;
     let that = this;
     that.setData({
@@ -63,14 +64,18 @@ Page({
           istrue: true,
           value: value,
           next: false,
+          scrollTop: 0,
+          isbottom: true,
         })
-        if (films.total == '0') {
+        if (films.total == 0) {
           that.setData({
             istrue: false,
+            last: true,
             next: true,
           })
         } else if (films.total <= 20) {
           that.setData({
+            last: true,
             next: true,
             isbottom: false,
           })
@@ -93,35 +98,35 @@ Page({
     let that = this;
     let value = that.data.value;
     let city = that.data.city;
-    let count = that.data.count-20;
+    let count = that.data.count - 20;
     let total = that.data.total;
-      that.setData({
-        count: count,
-        loading: false
-      })
-      wx.request({
-        url: 'https://api.douban.com/v2/movie/search?q=' + value + '&apikey=0b2bdeda43b5688921839c8ecb20399b&start=' + count,
-        data: {},
-        header: {
-          "Content-Type": "json"
-        },
-        success: function(res) {
-          console.log(res.data);
-          let films = res.data;
+    that.setData({
+      count: count,
+      loading: false
+    })
+    wx.request({
+      url: 'https://api.douban.com/v2/movie/search?q=' + value + '&apikey=0b2bdeda43b5688921839c8ecb20399b&start=' + count,
+      data: {},
+      header: {
+        "Content-Type": "json"
+      },
+      success: function(res) {
+        console.log(res.data);
+        let films = res.data;
+        that.setData({
+          films: films.subjects,
+          loading: true,
+          scrollTop: 0,
+          isbottom: true,
+        })
+        if (count = 20) {
           that.setData({
-            films: films.subjects,
-            loading: true,
-            scrollTop: 0,
-            isbottom:true,
+            last: true,
+            next: false,
           })
-          if (count = 20) {
-            that.setData({
-              last: true,
-              next: false,
-            })
-          }
         }
-      })
+      }
+    })
   },
 
   next: function() {
@@ -153,18 +158,18 @@ Page({
         }
       })
     }
-    if ((count + 20) > total){
+    if ((count + 20) > total) {
       that.setData({
-        isbottom:false,
+        isbottom: false,
         next: true,
       })
     }
   },
 
-  filmdetail:function(e){
+  filmdetail: function(e) {
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../film/film?id='+id,
+      url: '../film/film?id=' + id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},

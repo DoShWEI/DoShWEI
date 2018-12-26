@@ -44,4 +44,12 @@ Page({
       url: '../collection/collection',
     })
   },
+
+  newpage: function(e) {
+    let id = e.currentTarget.id;
+    console.log(e)
+    wx.navigateTo({
+      url: '../blankpages/blankpages?id=' + id,
+    })
+  },
 })

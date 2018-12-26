@@ -10,7 +10,7 @@
     <text class="interval">|</text>
     <view class="{{!isleft?'active':''}}" bindtap="tabChangeWaiting">即将上映</view>
     <view class="find" bindtap="find">
-      <image src='../images/find.png'></image>
+      <image src='../../images/find.png'></image>
     </view>
   </view>
   <view class="film">
@@ -31,7 +31,7 @@
     </block>
     </view>
     <view class='bottom' hidden="{{s_bottom}}">—————没有更多了—————</view>
-</scroll-view> -->
+</scroll-view>
 
 <scroll-view scroll-y class="films" hidden="{{isleft}}" style='height: {{height}}px' bindscrolltolower="comingloadmore">
   <view class="film-tab">
@@ -40,7 +40,7 @@
     <text class="interval">|</text>
     <view class="{{!isleft?'active':''}}" bindtap="tabChangeWaiting">即将上映</view>
     <view class="find" bindtap="find">
-      <image src='../images/find.png'></image>
+      <image src='../../images/find.png'></image>
     </view>
   </view>
   <view class="film">

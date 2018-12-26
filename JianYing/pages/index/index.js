@@ -15,7 +15,6 @@ Page({
     loading: false,
     city: '正在定位...',
     height: "",
-    cityid: '',
     s_bottom: true,
     c_bottom: true,
   },
@@ -23,13 +22,8 @@ Page({
   onLoad: function(options) {
     let that = this;
     let id = options.id;
-    let cityid = options.cityid;
     let showingfilmcount = this.data.showingfilmcount;
     let comingfilmcount = this.data.comingfilmcount;
-
-    this.setData({
-      cityid: cityid == undefined ? 368 : cityid,
-    })
 
     //定位
     wx.getLocation({
@@ -52,9 +46,10 @@ Page({
             that.setData({
               city: id == undefined ? city : id,
             })
+            let mycity = that.data.city;
             //定位完成后获取正在热映电影
             wx.request({
-              url: "https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=" + city + "&count=6",
+              url: "https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=" + mycity + "&count=6",
               data: {},
               header: {
                 "Content-Type": "json"
@@ -73,7 +68,7 @@ Page({
             })
             //定位完成后获取即将上演电影
             wx.request({
-              url: "https://api.douban.com/v2/movie/coming_soon?apikey=0b2bdeda43b5688921839c8ecb20399b&city=" + city + "&count=6",
+              url: "https://api.douban.com/v2/movie/coming_soon?apikey=0b2bdeda43b5688921839c8ecb20399b&city=" + mycity + "&count=6",
               data: {},
               header: {
                 "Content-Type": "json"
@@ -147,8 +142,6 @@ Page({
         header: {
           "Content-Type": "json"
         },
-
-        //成功时的回调，res为返回值，需要储存到我们的data数据里面
         success(res) {
           console.log(res.data);
           for (let m = 0; m < res.data.subjects.length ;m++){
@@ -168,7 +161,7 @@ Page({
       })
       wx.showToast({
         title: '抱歉,没有了...',
-        image: '../images/sorry.png',
+        image: '../../images/sorry.png',
         duration: 1000
       })
     }
@@ -211,7 +204,7 @@ Page({
       })
       wx.showToast({
         title: '抱歉,没有了...',
-        image: '../images/sorry.png',
+        image: '../../images/sorry.png',
         duration: 1000
       })
     }

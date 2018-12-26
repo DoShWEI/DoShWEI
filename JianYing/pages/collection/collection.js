@@ -11,10 +11,7 @@ Page({
     nothing:true,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
+  onShow:function(){
     let that = this;
 
     wx.getStorageInfo({
@@ -31,7 +28,7 @@ Page({
                   id: '',
                   img: '',
                   name: '',
-                  rating:''
+                  rating: ''
                 };
                 let film = value.split("+");
                 filmbasic.id = film[0];
@@ -40,7 +37,7 @@ Page({
                 filmbasic.rating = film[3];
                 films.push(filmbasic);
               }
-            } catch (e) {}
+            } catch (e) { }
           }
           console.log(films);
           that.setData({
@@ -50,9 +47,15 @@ Page({
         } else {
           that.setData({
             films: {},
-            nothing:false,
+            nothing: false,
           })
         }
+      },
+      fail(res) {
+        that.setData({
+          films: {},
+          nothing: false,
+        })
       }
     })
   },

@@ -4,16 +4,14 @@ Page({
     width: '',
     loading: false,
     basic: {},
-    triangle: "../images/down.png",
+    triangle: "../../images/down.png",
     storyheight: '95',
     fold: false,
     loading: false,
     modal: true,
     collection: '收藏',
-    collectionimg: '../images/collection_1.png',
+    collectionimg: '../../images/collection_1.png',
     iscollection: true,
-    useful: '../images/useful_1.png',
-    usefulcolor: 'ccc',
   },
 
   /**
@@ -30,7 +28,7 @@ Page({
         if (filmid[0] == id) {
           that.setData({
             collection: '已收藏',
-            collectionimg: '../images/collection_2.png',
+            collectionimg: '../../images/collection_2.png',
             iscollection: false,
           })
         }
@@ -67,19 +65,20 @@ Page({
         })
       }
     })
+    this.comment = this.selectComponent("#comment");
   },
 
   fold: function() {
     var fold = this.data.fold;
     if (fold) {
       this.setData({
-        triangle: "../images/up.png",
+        triangle: "../../images/up.png",
         storyheight: '',
         fold: !fold,
       })
     } else {
       this.setData({
-        triangle: "../images/down.png",
+        triangle: "../../images/down.png",
         storyheight: '95',
         fold: !fold
       })
@@ -95,7 +94,7 @@ Page({
     if (iscollection) {
       this.setData({
         collection: '已收藏',
-        collectionimg: '../images/collection_2.png',
+        collectionimg: '../../images/collection_2.png',
         iscollection: false,
       })
       wx.showToast({
@@ -110,7 +109,7 @@ Page({
     } else {
       this.setData({
         collection: '收藏',
-        collectionimg: '../images/collection_1.png',
+        collectionimg: '../../images/collection_1.png',
         iscollection: true,
       })
       wx.showToast({
