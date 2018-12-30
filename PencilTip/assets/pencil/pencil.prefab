@@ -27,13 +27,10 @@
       },
       {
         "__id__": 4
-      },
-      {
-        "__id__": 5
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 5
     },
     "_id": "",
     "_opacity": 255,
@@ -61,15 +58,15 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 182,
-      "y": 219
+      "x": -177,
+      "y": -281
     },
     "_skewX": 0,
     "_skewY": 0,
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 1
+    "groupIndex": 0
   },
   {
     "__type__": "cc.Sprite",
@@ -80,7 +77,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "016a1113-3e83-4420-afb7-1257289ca522"
+      "__uuid__": "9454abdf-d99d-478e-b619-e00e803ddb3b"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -105,9 +102,9 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_type": 0,
+    "_type": 1,
     "_allowSleep": true,
-    "_gravityScale": 0,
+    "_gravityScale": 1,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -117,7 +114,7 @@
     },
     "_angularVelocity": 0,
     "_fixedRotation": false,
-    "enabledContactListener": true,
+    "enabledContactListener": false,
     "bullet": false
   },
   {
@@ -128,11 +125,11 @@
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 3,
+    "tag": 2,
     "_density": 1,
     "_sensor": false,
     "_friction": 0,
-    "_restitution": 1,
+    "_restitution": 0,
     "body": null,
     "_offset": {
       "__type__": "cc.Vec2",
@@ -153,7 +150,7 @@
       {
         "__type__": "cc.Vec2",
         "x": 30.5,
-        "y": -20
+        "y": -17
       },
       {
         "__type__": "cc.Vec2",
@@ -163,18 +160,9 @@
       {
         "__type__": "cc.Vec2",
         "x": -30.5,
-        "y": -20
+        "y": -17
       }
     ]
-  },
-  {
-    "__type__": "79dcaKl0h9GD4YyU8G01UY9",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -182,9 +170,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "3502404a-6163-4d04-82d0-978b65bafbfd"
+      "__uuid__": "2deb7050-fd80-4c38-859b-63af10111e61"
     },
-    "fileId": "b20cJ02wBMq6j9vn9+RIML",
+    "fileId": "cb2Zzu6olPmJowrVsEJsc4",
     "sync": false
   }
 ]
